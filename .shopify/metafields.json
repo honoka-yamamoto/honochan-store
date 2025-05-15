@@ -78,6 +78,36 @@
         "name": "list.metaobject_reference",
         "category": "REFERENCE"
       }
+    },
+    {
+      "key": "varaintlike_products_title",
+      "namespace": "custom",
+      "name": "バリアントライクな商品リストの枠名",
+      "description": "",
+      "type": {
+        "name": "single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "varaintlike_products",
+      "namespace": "custom",
+      "name": "バリアントライクな商品リスト",
+      "description": "",
+      "type": {
+        "name": "list.product_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "varaintlike_product_name",
+      "namespace": "custom",
+      "name": "バリアントライクな商品リスト用の商品名",
+      "description": "",
+      "type": {
+        "name": "single_line_text_field",
+        "category": "TEXT"
+      }
     }
   ],
   "variant": [],

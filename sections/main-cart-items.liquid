@@ -49,6 +49,12 @@
     </div>
 
     <form action="{{ routes.cart_url }}" class="cart__contents critical-hidden" method="post" id="cart">
+      {%- for attribute in cart.attributes -%}
+        {%- assign attribute_key = attribute | split: ',' | first -%}
+        {%- if attribute_key contains 'random-featured-collection_' -%}
+          <input type="hidden" name="attributes[{{ attribute_key }}]" value="">
+        {%- endif -%}
+      {%- endfor -%}
       <div class="cart__items" id="main-cart-items" data-id="{{ section.id }}">
         <div class="js-contents">
           {%- if cart != empty -%}
