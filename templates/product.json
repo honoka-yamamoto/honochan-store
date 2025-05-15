@@ -23,6 +23,19 @@
           "type": "title",
           "settings": {}
         },
+        "mxpr-average-rating": {
+          "type": "shopify://apps/prime-review/blocks/mxpr-average-rating/f16f27f6-be6f-4f94-921b-9a297092286b",
+          "settings": {
+            "stars_fill_color": "#ffd900",
+            "star_size": 24,
+            "padding_x": 0,
+            "padding_y": 0,
+            "show_count": true,
+            "count_caption_prefix": "(",
+            "count_caption_suffix": ")",
+            "product": "{{product}}"
+          }
+        },
         "price": {
           "type": "price",
           "settings": {}
@@ -45,6 +58,19 @@
             "show_gift_card_recipient": true
           }
         },
+        "mxpr-favorites": {
+          "type": "shopify://apps/prime-review/blocks/mxpr-favorites/f16f27f6-be6f-4f94-921b-9a297092286b",
+          "settings": {
+            "heading": "",
+            "add_message": "",
+            "exist_message": "",
+            "forbidden_alert": "",
+            "view_favorites": "",
+            "button_class": "button\nbutton--full-width\nbutton--secondary",
+            "additional_style": "",
+            "product": "{{product}}"
+          }
+        },
         "description": {
           "type": "description",
           "settings": {}
@@ -55,24 +81,12 @@
             "share_label": "Share"
           }
         },
-        "mxpr-average-rating": {
-          "type": "shopify://apps/prime-review/blocks/mxpr-average-rating/f16f27f6-be6f-4f94-921b-9a297092286b",
+        "variantlike_products_nHMakN": {
+          "type": "variantlike_products",
           "settings": {
-            "stars_fill_color": "#FFD900",
-            "star_size": 24,
-            "padding_x": 0,
-            "padding_y": 0,
-            "show_count": true,
-            "count_caption_prefix": "(",
-            "count_caption_suffix": ")",
-            "product": "{{product}}"
-          }
-        },
-        "mxpr-favorites": {
-          "type": "shopify://apps/prime-review/blocks/mxpr-favorites/f16f27f6-be6f-4f94-921b-9a297092286b",
-          "settings": {
-            "button_class": "button\nbutton--full-width\nbutton--secondary",
-            "product": "{{product}}"
+            "variantlike_products_thumnail_width": 50,
+            "variantlike_products_thumnail_height": 50,
+            "variantlike_products_thumnail_crop": "center"
           }
         }
       },
@@ -86,7 +100,8 @@
         "buy_buttons",
         "mxpr-favorites",
         "description",
-        "share"
+        "share",
+        "variantlike_products_nHMakN"
       ],
       "settings": {
         "enable_sticky_info": true,
@@ -102,55 +117,6 @@
         "enable_video_looping": false,
         "padding_top": 36,
         "padding_bottom": 12
-      }
-    },
-    "related-products": {
-      "type": "related-products",
-      "settings": {
-        "heading": "You may also like",
-        "heading_size": "h2",
-        "products_to_show": 4,
-        "columns_desktop": 4,
-        "columns_mobile": "2",
-        "color_scheme": "scheme-2",
-        "image_ratio": "square",
-        "image_shape": "default",
-        "show_secondary_image": true,
-        "show_vendor": false,
-        "show_rating": false,
-        "padding_top": 36,
-        "padding_bottom": 28
-      }
-    },
-    "mxpr-product-reviews": {
-      "type": "apps",
-      "blocks": {
-        "mxpr_product_review_block": {
-          "type": "shopify://apps/prime-review/blocks/mxpr-product-reviews/f16f27f6-be6f-4f94-921b-9a297092286b",
-          "settings": {
-            "list_count": 5,
-            "stars_fill_color": "#FFD900",
-            "star_size": 24,
-            "border_color": "#dddddd",
-            "border_size": 0,
-            "border_radius": 5,
-            "margin_y": 0,
-            "margin_x": 0,
-            "margin_auto": true,
-            "padding_y": 20,
-            "padding_x": 20,
-            "title_size": 24,
-            "show_detail": true,
-            "show_score": false,
-            "product": "{{product}}"
-          }
-        }
-      },
-      "block_order": [
-        "mxpr_product_review_block"
-      ],
-      "settings": {
-        "include_margins": true
       }
     },
     "mxpr-qanda": {
@@ -169,6 +135,7 @@
             "padding_x": 20,
             "heading": "Q&A",
             "title_size": 24,
+            "additional_style": "",
             "product": "{{product}}"
           }
         }
@@ -178,6 +145,62 @@
       ],
       "settings": {
         "include_margins": true
+      }
+    },
+    "mxpr-product-reviews": {
+      "type": "apps",
+      "blocks": {
+        "mxpr_product_review_block": {
+          "type": "shopify://apps/prime-review/blocks/mxpr-product-reviews/f16f27f6-be6f-4f94-921b-9a297092286b",
+          "settings": {
+            "list_count": 5,
+            "load_more_text": "",
+            "stars_fill_color": "#ffd900",
+            "star_size": 24,
+            "border_color": "#dddddd",
+            "border_size": 0,
+            "border_radius": 5,
+            "margin_y": 0,
+            "margin_x": 0,
+            "margin_auto": true,
+            "padding_y": 20,
+            "padding_x": 20,
+            "heading": "",
+            "title_size": 24,
+            "no_reviews_action_text": "",
+            "existing_reviews_action_text": "",
+            "best_review_label": "",
+            "forbidden_alert": "",
+            "show_detail": true,
+            "show_score": false,
+            "additional_style": "",
+            "product": "{{product}}"
+          }
+        }
+      },
+      "block_order": [
+        "mxpr_product_review_block"
+      ],
+      "settings": {
+        "include_margins": true
+      }
+    },
+    "related-products": {
+      "type": "related-products",
+      "settings": {
+        "heading": "You may also like",
+        "heading_size": "h2",
+        "products_to_show": 4,
+        "columns_desktop": 4,
+        "columns_mobile": "2",
+        "color_scheme": "scheme-2",
+        "image_ratio": "square",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "padding_top": 36,
+        "padding_bottom": 28
       }
     }
   },
