@@ -76,6 +76,7 @@
         "enable_desktop_slider": false,
         "full_width": false,
         "show_view_all": true,
+        "display_at_random": true,
         "view_all_style": "solid",
         "color_scheme": "scheme-1",
         "image_ratio": "adapt",
