@@ -463,6 +463,76 @@
 
               {%- when 'variant_picker' -%}
                 {% render 'product-variant-picker', product: product, block: block, product_form_id: product_form_id %}
+
+                {%- when 'variantlike_products' -%}
+                <div class="variantlike_products">
+                  <dl>
+                    <dt>{{ product.metafields.custom.varaintlike_products_title }}</dt>
+                    <dd>{{ product.metafields.custom.varaintlike_product_name }}</dd>
+                  </dl>
+                  <ul class="variantlike_products">
+                    {%- for product in product.metafields.custom.varaintlike_products.value -%}
+                    <li{% if request.path == product.url %} class="selected"{% endif %}><a href="{{ product.url }}">
+                        {%- capture size -%}
+                          {{- block.settings.variantlike_products_thumnail_width -}}x{{- block.settings.variantlike_products_thumnail_height -}}
+                        {%- endcapture -%}
+                        {% unless product.featured_image == blank %}
+                        <img
+                          src="{{ product.featured_image | img_url: size }}"
+                          {{ size }}
+                          alt="{{ product.featured_image.alt | escape }}"
+                          width="{{ width }}"
+                          height="{{ height }}"
+                        >
+                        {% else %}
+                          {{ 'product-1' | placeholder_svg_tag }}
+                        {% endunless %}
+                      </a></li>
+                    {%- endfor -%}
+                    </ul>
+                </div>
+                  <style>
+                    .variantlike_products dl {
+                      display: flex;
+                      align-items: center;
+                      margin: 0 0 0.6rem;
+                      font-size: 1.3rem;
+                    }
+                    .variantlike_products dt,
+                    .variantlike_products dd {
+                      margin: 0;
+                      padding: 0;
+                    }
+                    .variantlike_products dt {
+                      font-weight: bold;
+                    }
+                    .variantlike_products dt:not(:empty)::after {
+                      content: "："
+                    }
+                    .variantlike_products ul {
+                      display: flex;
+                      flex-wrap: wrap;
+                      gap: 2px;
+                      margin: 0;
+                      padding: 0;
+                    }
+                    .variantlike_products li {
+                      list-style-type: none;
+                      margin: 0;
+                      padding: 0;
+                      border: 1px solid #FFF;
+                    }
+                    .variantlike_products li.selected {
+                      border: 1px solid #000;
+                    }
+                    .variantlike_products li img,
+                    .variantlike_products li svg {
+                      vertical-align:top; /* imgタグの下にできる余白を無くす */
+                      width: {{- block.settings.variantlike_products_thumnail_width -}}px;
+                      height:  {{- block.settings.variantlike_products_thumnail_height -}}px;
+                    }
+                </style>
+
               {%- when 'buy_buttons' -%}
                 {%- render 'buy-buttons',
                   block: block,
@@ -893,6 +963,61 @@
         }
       ]
     },
+    {
+      "type": "variantlike_products",
+      "name": "バリアントのように見せる商品",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "range",
+          "id": "variantlike_products_thumnail_width",
+          "min": 10,
+          "max": 100,
+          "step": 1,
+          "unit": "px",
+          "default": 50,
+          "label": "サムネイル幅"
+        },
+        {
+          "type": "range",
+          "id": "variantlike_products_thumnail_height",
+          "min": 10,
+          "max": 100,
+          "step": 1,
+          "unit": "px",
+          "default": 50,
+          "label": "サムネイル高さ"
+        },
+        {
+          "type": "select",
+          "id": "variantlike_products_thumnail_crop",
+          "default": "center",
+          "label": "トリミング位置",
+          "options": [
+            {
+              "value": "center",
+              "label": "中央"
+            },
+            {
+              "value": "top",
+              "label": "上端"
+            },
+            {
+              "value": "bottom",
+              "label": "下端"
+            },
+            {
+              "value": "left",
+              "label": "左端"
+            },
+            {
+              "value": "right",
+              "label": "右端"
+            }
+          ]
+        }
+      ]
+},
     {
       "type": "buy_buttons",
       "name": "t:sections.main-product.blocks.buy_buttons.name",
