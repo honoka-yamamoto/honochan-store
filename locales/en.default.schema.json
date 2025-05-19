@@ -617,9 +617,6 @@
           "default": "Collections",
           "label": "Heading"
         },
-        "display_at_random": {
-          "label": "Display products at random"
-        },
          "header_layout": {
         "content": "Layout"
         },        
@@ -739,6 +736,9 @@
     "featured-collection": {
       "name": "Featured collection",
       "settings": {
+        "display_at_random": {
+          "label": "Display products at random"
+        },
         "header_text": {
         "content": "Text"
         },
