@@ -334,6 +334,9 @@
       "view_all": "View all",
       "view_all_label": "View all products in the {{ collection_name }} collection"
     },
+    "display_at_random": {
+          "label": "Display products at random"
+        },
     "collection_list": {
       "view_all": "View all"
     },
