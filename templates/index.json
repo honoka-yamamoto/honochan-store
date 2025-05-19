@@ -67,7 +67,7 @@
       "settings": {
         "collection": "automated-collection",
         "display_at_random": true,
-        "products_to_show": 5,
+        "products_to_show": 6,
         "title": "Featured products",
         "heading_size": "h2",
         "description": "",
