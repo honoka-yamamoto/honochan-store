@@ -88,6 +88,12 @@
             "variantlike_products_thumnail_height": 50,
             "variantlike_products_thumnail_crop": "center"
           }
+        },
+        "size_chart_pjYpjL": {
+          "type": "size_chart",
+          "settings": {
+            "size_chart_liquid": "table {\n  border-collapse: collapse;\n  font-size: .9em;\n}\ntable th,\ntable td {\n  border: 1px solid #EAEAEA;\n  white-space: nowrap;\n  text-align: center;\n  padding: .5rem;\n  line-height: 1.2;\n}\ntable th {\n  background-color: #f6f6f5;\n}"
+          }
         }
       },
       "block_order": [
@@ -101,7 +107,8 @@
         "mxpr-favorites",
         "description",
         "share",
-        "variantlike_products_nHMakN"
+        "variantlike_products_nHMakN",
+        "size_chart_pjYpjL"
       ],
       "settings": {
         "enable_sticky_info": true,
