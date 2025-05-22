@@ -197,17 +197,19 @@
                     {{ product.description }}
                   </div>
                 {%- endif -%}
-                {%- when 'size_chart' -%}
-                  {%- if product.metafields.custom.size_chart -%}
+                {% when 'size_chart' %}
+                  {% assign chart = product.metafields.custom.size_chart.value %}
+                  {% if chart %}
                     <div class="size-chart" {{ block.shopify_attributes }}>
-                    {{ product.metafields.custom.size_chart.value.chart }}
+                      {% if chart.title %}
+                        <h3>{{ chart.title }}</h3>
+                      {% endif %}
+                      {{ chart.body }}
                     </div>
                     <style>
-                      .size-chart {
-                        {{ block.settings.size_chart_liquid }}
-                      }
+                      {{ block.settings.size_chart_liquid }}
                     </style>
-                  {%- endif -%} 
+                  {% endif %}
               {%- when 'sku' -%}
                 <p
                   class="product__sku{% if block.settings.text_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.text_style == 'subtitle' %} subtitle{% endif %}{% if product.selected_or_first_available_variant.sku.size == 0 %} visibility-hidden{% endif %}"
@@ -1005,30 +1007,30 @@
           "default": "center",
           "label": "トリミング位置",
           "options": [
-            {
-              "value": "center",
-              "label": "中央"
-            },
-            {
-              "value": "top",
-              "label": "上端"
-            },
-            {
-              "value": "bottom",
-              "label": "下端"
-            },
-            {
-              "value": "left",
-              "label": "左端"
-            },
-            {
-              "value": "right",
-              "label": "右端"
-            }
-          ]
+                        {
+                          "value": "center",
+                          "label": "中央"
+                        },
+                        {
+                          "value": "top",
+                          "label": "上端"
+                        },
+                        {
+                          "value": "bottom",
+                          "label": "下端"
+                        },
+                        {
+                          "value": "left",
+                          "label": "左端"
+                        },
+                        {
+                          "value": "right",
+                          "label": "右端"
+                        }
+                      ]
         }
       ]
-},
+    },
     {
       "type": "buy_buttons",
       "name": "t:sections.main-product.blocks.buy_buttons.name",
@@ -1104,6 +1106,7 @@
           "default": "t:sections.main-product.blocks.collapsible_tab.settings.heading.default",
           "label": "t:sections.main-product.blocks.collapsible_tab.settings.heading.label"
         },
+  
         {
           "type": "select",
           "id": "icon",
