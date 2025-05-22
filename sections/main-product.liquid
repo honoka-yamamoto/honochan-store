@@ -205,7 +205,7 @@
                     {% if chart.title %}
                       <h3>{{ chart.title }}</h3>
                     {% endif %}
-                    {{ chart.body }}
+                    {{ chart.body | metafield_tag }}
                   </div>
                   <style>
                     {{ block.settings.size_chart_liquid }}
