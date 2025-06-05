@@ -105,11 +105,18 @@
           "settings": {
             "collection": "スノーボード"
           }
+        },
+        "featured_collection_HBijDt": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "服"
+          }
         }
       },
       "block_order": [
         "featured_collection_Pmn6ia",
-        "featured_collection_VRJFk7"
+        "featured_collection_VRJFk7",
+        "featured_collection_HBijDt"
       ],
       "name": "t:sections.collection-list.presets.name",
       "settings": {
