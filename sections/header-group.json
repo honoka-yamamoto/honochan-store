@@ -54,33 +54,20 @@
         "padding_bottom": 20
       }
     },
-<<<<<<< HEAD
-    "custom_liquid_ybzHxX": {
-=======
     "custom_liquid_KiapGt": {
->>>>>>> 98d543cbf202e07134b49f2cce8d7f2a8d54c00b
       "type": "custom-liquid",
-      "name": "t:sections.custom-liquid.presets.name",
+      "name": "検索欄",
       "settings": {
         "custom_liquid": "{% assign filter_param_label = '商品タイプ' %}\n<script>\n{%- assign filter_param_key = '' -%}\n{%- for filter in collections['all'].filters -%}\n\t\t{%- if filter.label == filter_param_label -%}\n\t\t\t\t{%- assign filter_param_key = filter.param_name -%}\n\t\t\t\tconst filterParamValues = [\n\t\t\t\t{%- for value in filter.values -%}\n\t\t\t\t\t\t'{{ value.value }}',\n\t\t\t\t{%- endfor -%}\n\t\t\t\t];\n\t\t{%- endif -%}\n{%- endfor -%}\n{%- unless filter_param_key == '' -%}\n\t\twindow.addEventListener('DOMContentLoaded', (event) => {\n\t\t\t\tconst searchInModal = document.querySelector('#Search-In-Modal');\n\t\t\t\tif (!searchInModal) return;\n\t\t\t\tsearchInModal.style.cssText = 'padding-left: 0.6em;';\n\t\t\t\tconst searchInModalLabel = document.querySelector('label[for=\"Search-In-Modal\"]');\n\t\t\t\tconst filterParam = document.createElement('select');\n\t\t\t\tfilterParam.name = '{{ filter_param_key}}';\n\t\t\t\tconst filterParamValue = document.createElement('option');\n\t\t\t\tfilterParamValue.value = '';\n\t\t\t\tfilterParamValue.textContent = 'すべて';\n\t\t\t\tfilterParam.appendChild(filterParamValue);\n\t\t\t\tconst params = new URLSearchParams(window.location.search);\n\t\t\t\tfilterParamValues.forEach((value) => {\n\t\t\t\t\t\tconst filterParamValue = document.createElement('option');\n\t\t\t\t\t\tfilterParamValue.value = value;\n\t\t\t\t\t\tfilterParamValue.textContent = value;\n\t\t\t\t\t\tif (value == params.get('{{ filter_param_key}}')) filterParamValue.selected = true;\n\t\t\t\t\t\tfilterParam.appendChild(filterParamValue);\n\t\t\t\t});\n\t\t\t\tfilterParam.style.cssText = 'padding-top: 10px;';\n\t\t\t\tsearchInModal.parentNode.insertBefore(filterParam, searchInModal);\n\t\t\t\tconst filterParamLabel = document.createElement('label');\n\t\t\t\tfilterParamLabel.textContent = '{{ filter_param_label }}';\n\t\t\t\tfilterParamLabel.style.cssText = 'position:absolute; top: 5px; left: 5px; font-size: 9px';\n\t\t\t\tsearchInModal.parentNode.insertBefore(filterParamLabel, searchInModal);\n\t\t\t\tsearchInModalLabel.style.left = filterParam.getBoundingClientRect().width + 10 + 'px';\n\t\t\t\tconst searchInTemplate = document.querySelector('#Search-In-Template');\n\t\t\t\tif (!searchInTemplate) return;\n\t\t\t\tsearchInTemplate.style.cssText = 'padding-left: 0.6em;';\n\t\t\t\tconst searchInTemplateLabel = document.querySelector('label[for=\"Search-In-Template\"]');\n\t\t\t\tconst filterParamInTemplate = filterParam.cloneNode(true);\n\t\t\t\tconst filterParamLabelInTemplate = filterParamLabel.cloneNode(true);\n\t\t\t\tsearchInTemplate.parentNode.insertBefore(filterParamInTemplate, searchInTemplate);\n\t\t\t\t[...filterParamInTemplate.options].forEach((option) => {\n\t\t\t\t\t\tif (option.value == params.get('{{ filter_param_key}}')) option.selected = true;\n\t\t\t\t});\n\t\t\t\tsearchInTemplate.parentNode.insertBefore(filterParamLabelInTemplate, searchInTemplate);\n\t\t\t\tsearchInTemplateLabel.style.left = filterParamInTemplate.getBoundingClientRect().width + 10 + 'px';\n\t\t});\n{%- endunless -%}\n</script>",
         "color_scheme": "",
-<<<<<<< HEAD
-        "padding_top": 40,
-        "padding_bottom": 52
-=======
         "padding_top": 0,
         "padding_bottom": 0
->>>>>>> 98d543cbf202e07134b49f2cce8d7f2a8d54c00b
       }
     }
   },
   "order": [
     "announcement-bar",
     "header",
-<<<<<<< HEAD
-    "custom_liquid_ybzHxX"
-=======
     "custom_liquid_KiapGt"
->>>>>>> 98d543cbf202e07134b49f2cce8d7f2a8d54c00b
   ]
 }
