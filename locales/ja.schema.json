@@ -1861,15 +1861,6 @@
         "description": {
           "name": "商品説明"
         },
-        "size_chart": {
-          "name": "サイズ表",
-          "settings": {
-            "size_chart_liquid": {
-              "label": "サイズ表用CSS",
-              "info": "サイズ表に設定するテーブル表のCSSを自由に設定してください。"
-            }
-          }
-        }, 
         "rating": {
           "name": "商品評価",
           "settings": {

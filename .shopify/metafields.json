@@ -30,6 +30,46 @@
       }
     },
     {
+      "key": "queries",
+      "namespace": "shopify--discovery--product_search_boost",
+      "name": "販売促進する商品を検索する",
+      "description": "商品が検索結果で上位に表示される検索クエリのリスト",
+      "type": {
+        "name": "list.single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "related_products",
+      "namespace": "shopify--discovery--product_recommendation",
+      "name": "関連商品",
+      "description": "関連商品のリスト",
+      "type": {
+        "name": "list.product_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "related_products_display",
+      "namespace": "shopify--discovery--product_recommendation",
+      "name": "関連商品の設定",
+      "description": "関連商品がアルゴリズムによるおすすめ商品とともにどのように表示されるかを決定します",
+      "type": {
+        "name": "single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "complementary_products",
+      "namespace": "shopify--discovery--product_recommendation",
+      "name": "付属商品",
+      "description": "付属商品のリスト",
+      "type": {
+        "name": "list.product_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
       "key": "music-genre",
       "namespace": "shopify",
       "name": "音楽のジャンル",
@@ -67,36 +107,6 @@
       "type": {
         "name": "single_line_text_field",
         "category": "TEXT"
-      }
-    },
-    {
-      "key": "size_chart",
-      "namespace": "custom",
-      "name": "サイズ表",
-      "description": "",
-      "type": {
-        "name": "metaobject_reference",
-        "category": "REFERENCE"
-      }
-    },
-    {
-      "key": "book-cover-type",
-      "namespace": "shopify",
-      "name": "ブックカバーの種類",
-      "description": "ハードカバーやペーパーバックなど、本の表紙の種類を識別します。",
-      "type": {
-        "name": "list.metaobject_reference",
-        "category": "REFERENCE"
-      }
-    },
-    {
-      "key": "compatible-instrument",
-      "namespace": "shopify",
-      "name": "使用可能な楽器",
-      "description": "製品が設計されている楽器 (ギターやピアノなど) を識別します。",
-      "type": {
-        "name": "list.metaobject_reference",
-        "category": "REFERENCE"
       }
     }
   ],
